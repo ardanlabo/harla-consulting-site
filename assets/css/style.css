@@ -1,11 +1,11 @@
-/* ===============================
-   HARLA CONSULTING — DARK SYSTEM V1
-   Analytical Intelligence Lab
-================================= */
+/* =====================================================
+   HARLA CONSULTING
+   Analytical Intelligence Lab — Dark System V3
+===================================================== */
 
 :root {
   --bg: #0f1214;
-  --surface: #151a1e;
+  --surface: #171c21;
   --ink: #f2f4f5;
   --muted: #9aa3aa;
   --accent: #8c7a58;
@@ -18,7 +18,9 @@
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -28,159 +30,95 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .container {
   width: min(var(--container), 92%);
   margin-inline: auto;
 }
 
-/* ===============================
-   HEADER
-================================= */
+/* =====================================================
+   TOPBAR
+===================================================== */
 
-.site-header {
-  padding: 26px 0;
+.topbar {
+  position: sticky;
+  top: 0;
+  background: rgba(15,18,20,0.85);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  z-index: 100;
 }
 
-.brand {
-  font-weight: 600;
-  letter-spacing: 0.18em;
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.wordmark {
+  font-family: "IBM Plex Serif", serif;
+  letter-spacing: 0.24em;
+  font-size: 16px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a {
   font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 
-.brand strong {
+.nav a:hover {
   color: var(--ink);
-  letter-spacing: 0.22em;
 }
 
-/* ===============================
-   HERO
-================================= */
-
-.hero {
-  padding: 140px 0 120px;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 480px;
-  gap: 80px;
-  align-items: start;
-}
-
-.hero-title {
-  font-family: "IBM Plex Serif", serif;
-  font-size: clamp(46px, 5vw, 72px);
-  line-height: 1.05;
-  margin: 0 0 20px;
-  letter-spacing: -0.02em;
-}
-
-.hero-sub {
-  font-size: 20px;
-  color: var(--muted);
-  max-width: 560px;
-  margin-bottom: 40px;
-}
-
-.hero-divider {
-  height: 1px;
-  width: 120px;
-  background: var(--accent);
-  margin: 40px 0;
-}
-
-.hero-meta {
-  font-size: 14px;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-}
-
-/* ===============================
-   VISUAL PLACEHOLDER
-================================= */
-
-.visual-box {
-  border: 1px solid var(--line);
-  background: var(--surface);
-  height: 420px;
-  position: relative;
-  padding: 30px;
-}
-
-.visual-box::before {
-  content: "SYSTEM ARCHITECTURE PLACEHOLDER";
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-}
-
-.visual-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* ===============================
-   SECTION
-================================= */
-
-.section {
-  padding: 120px 0;
-  border-top: 1px solid var(--line);
-}
-
-.section-title {
-  font-family: "IBM Plex Serif", serif;
-  font-size: 34px;
-  margin-bottom: 20px;
-}
-
-.section-text {
-  color: var(--muted);
-  max-width: 720px;
-  font-size: 18px;
-}
-
-/* ===============================
-   FOOTER
-================================= */
-
-footer {
-  border-top: 1px solid var(--line);
-  padding: 60px 0;
+.cta {
+  border: 1px solid rgba(140,122,88,0.35);
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 600;
   font-size: 13px;
-  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* ===============================
-   V2 MONUMENTAL TYPOGRAPHY
-================================= */
+.cta:hover {
+  border-color: rgba(140,122,88,0.7);
+  background: rgba(140,122,88,0.08);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
   position: relative;
+  padding: 150px 0 120px;
   overflow: hidden;
 }
+
+/* Monumental background typography */
 
 .hero::before {
   content: "HARLA";
   position: absolute;
-  top: 60px;
-  left: -40px;
+  top: 40px;
+  left: -80px;
   font-family: "IBM Plex Serif", serif;
-  font-size: 260px;
-  font-weight: 500;
+  font-size: 320px;
   letter-spacing: -0.04em;
-  color: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.05);
   pointer-events: none;
   user-select: none;
 }
@@ -196,31 +134,17 @@ footer {
   pointer-events: none;
 }
 
-/* Stronger hero headline */
-
-.hero-title {
-  font-size: clamp(52px, 6vw, 84px);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-}
-
-/* Add manifesto line */
-
-.manifesto {
-  margin-top: 60px;
-  font-size: 16px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(242,244,245,0.65);
-}
-
-/* ===============================
-   V3 STRUCTURAL TENSION
-================================= */
+/* Grid layout */
 
 .hero-inner {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 90px;
+  align-items: start;
 }
+
+/* Vertical divider tension */
 
 .hero-inner::before {
   content: "";
@@ -232,29 +156,195 @@ footer {
   background: rgba(255,255,255,0.06);
 }
 
-.visual-box {
-  background: #171c21;
-  border: 1px solid rgba(255,255,255,0.06);
-}
+/* Left column */
 
-.hero::before {
-  font-size: 320px;
-  left: -80px;
-  top: 40px;
-  opacity: 0.05;
+.kicker {
+  color: rgba(242,244,245,0.78);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0 0 18px;
 }
 
 .hero-title {
-  max-width: 700px;
+  font-family: "IBM Plex Serif", serif;
+  font-size: clamp(58px, 6vw, 86px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+  max-width: 720px;
 }
 
 .hero-sub {
   font-size: 18px;
+  color: var(--muted);
+  max-width: 560px;
   line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+}
+
+.btn-primary {
+  border-color: rgba(140,122,88,0.45);
+  background: linear-gradient(
+    180deg,
+    rgba(140,122,88,0.18),
+    rgba(140,122,88,0.08)
+  );
+}
+
+.btn-primary:hover {
+  border-color: rgba(140,122,88,0.75);
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.03);
+}
+
+.micro {
+  margin-top: 32px;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 560px;
+}
+
+.micro-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 10px;
+}
+
+.micro kbd {
+  font-family: inherit;
+  font-size: 12px;
+  color: rgba(242,244,245,0.82);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 4px 8px;
+  border-radius: 999px;
 }
 
 .manifesto {
   margin-top: 80px;
-  font-weight: 500;
+  font-size: 15px;
   letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(242,244,245,0.65);
+  font-weight: 500;
+}
+
+/* =====================================================
+   VISUAL BOX
+===================================================== */
+
+.visual-box {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  height: 440px;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.visual-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.visual-diagram {
+  position: absolute;
+  inset: 0;
+  opacity: 0.95;
+}
+
+.visual-label {
+  position: absolute;
+  bottom: 18px;
+  left: 30px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242,244,245,0.78);
+}
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  color: var(--muted);
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 70px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 980px) {
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .hero-inner::before {
+    display: none;
+  }
+
+  .micro-row {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero::before {
+    font-size: 180px;
+    left: -40px;
+  }
 }
