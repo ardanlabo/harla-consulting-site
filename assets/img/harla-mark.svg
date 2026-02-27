@@ -1,1 +1,11 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harla Consulting mark">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="rgba(28,28,28,0.14)" stroke-width="2"/>
+  <!-- Subtle geometric "H" built from bars -->
+  <path d="M18 18H24V46H18V18Z" fill="#1C1C1C" opacity="0.92"/>
+  <path d="M40 18H46V46H40V18Z" fill="#1C1C1C" opacity="0.92"/>
+  <path d="M24 30H40V34H24V30Z" fill="#6E7F64" opacity="0.95"/>
+  <!-- Small accent dot for refinement -->
+  <circle cx="48" cy="18" r="2" fill="#6E7F64" opacity="0.75"/>
+</svg>
