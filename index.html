@@ -14,38 +14,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    /* V2 additions (HOME only) */
-    .topbar{position:sticky;top:0;background:rgba(15,18,20,0.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .nav{display:flex;gap:18px;align-items:center}
-    .nav a{color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-    .nav a:hover{color:var(--ink)}
-    .cta{border:1px solid rgba(140,122,88,0.35);padding:10px 12px;border-radius:12px;color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-    .cta:hover{border-color:rgba(140,122,88,0.65);background:rgba(140,122,88,0.08)}
-    .kicker{color:rgba(242,244,245,0.78);letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
-    .wordmark{font-family:"IBM Plex Serif",serif;font-size:18px;letter-spacing:.24em;color:var(--ink)}
-    .hero-title{margin-bottom:14px}
-    .hero-sub{margin-top:0}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:14px;border:1px solid var(--line);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-    .btn-primary{border-color:rgba(140,122,88,0.45);background:linear-gradient(180deg,rgba(140,122,88,0.18),rgba(140,122,88,0.08))}
-    .btn-primary:hover{border-color:rgba(140,122,88,0.75)}
-    .btn-ghost{background:rgba(255,255,255,0.03)}
-    .micro{margin-top:26px;display:grid;gap:8px;color:var(--muted);font-size:13px;max-width:560px}
-    .micro-row{display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px}
-    .micro kbd{font-family:inherit;font-size:12px;color:rgba(242,244,245,0.82);border:1px solid rgba(255,255,255,0.10);padding:4px 8px;border-radius:999px}
-    .visual-box{overflow:hidden}
-    .visual-diagram{position:absolute;inset:0;opacity:0.95}
-    .visual-label{position:absolute;bottom:18px;left:30px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,244,245,0.78)}
-    @media (max-width: 980px){
-      .hero-inner{grid-template-columns:1fr;gap:46px}
-      .micro-row{justify-content:flex-start;gap:10px;flex-wrap:wrap}
-    }
-  </style>
 </head>
 
 <body>
@@ -66,8 +38,12 @@
 <section class="hero">
   <div class="container hero-inner">
 
+    <!-- LEFT COLUMN -->
     <div>
-      <p class="kicker">Operational Consultancy • Decision Support • Industrial Analytics</p>
+
+      <p class="kicker">
+        Operational Consultancy • Decision Support • Industrial Analytics
+      </p>
 
       <h1 class="hero-title">
         Operational Decision Architecture
@@ -82,13 +58,14 @@
         <a class="btn btn-ghost" href="about.html">How we work</a>
       </div>
 
-      <div class="micro" aria-label="Credibility details">
+      <div class="micro">
         <div class="micro-row">
           <span>Orientation</span>
           <kbd>Field realism</kbd>
           <kbd>Analytical rigor</kbd>
           <kbd>Execution</kbd>
         </div>
+
         <div class="micro-row">
           <span>Presence</span>
           <kbd>Ethiopia</kbd>
@@ -96,12 +73,19 @@
           <kbd>Horn of Africa</kbd>
         </div>
       </div>
+
+      <!-- MANIFESTO LINE -->
+      <div class="manifesto">
+        We design systems that remain stable under operational pressure.
+      </div>
+
     </div>
 
+    <!-- RIGHT COLUMN -->
     <div class="visual-box">
+
       <div class="visual-grid"></div>
 
-      <!-- Abstract System Diagram (placeholder but premium) -->
       <svg class="visual-diagram" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
@@ -147,7 +131,10 @@
         </g>
       </svg>
 
-      <div class="visual-label">System mapping • Decision logic • Monitoring cadence</div>
+      <div class="visual-label">
+        System mapping • Decision logic • Monitoring cadence
+      </div>
+
     </div>
 
   </div>
@@ -155,7 +142,9 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Analytical Intelligence for Operational Systems</h2>
+    <h2 class="section-title">
+      Analytical Intelligence for Operational Systems
+    </h2>
     <p class="section-text">
       Harla Consulting builds decision-support architecture that transforms fragmented reporting into structured operational intelligence.
       We design systems that operate under constraint, remain defensible under scrutiny, and deliver clarity where complexity dominates.
@@ -165,7 +154,10 @@
 
 <footer>
   <div class="container">
-    Harla Consulting — Addis Ababa & UAE — <a href="mailto:contact@harlaconsulting.com">contact@harlaconsulting.com</a>
+    Harla Consulting — Addis Ababa & UAE — 
+    <a href="mailto:contact@harlaconsulting.com">
+      contact@harlaconsulting.com
+    </a>
   </div>
 </footer>
 
