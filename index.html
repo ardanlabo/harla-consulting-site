@@ -1,421 +1,165 @@
-/* =====================================================
-   HARLA CONSULTING
-   Dark War-Room System V5 — One Accent
-   Controlled Cyberpunk (KYC-safe)
-===================================================== */
-
-:root{
-  --bg:#0b0e10;
-  --bg2:#0f1214;
-  --surface:#12171b;
-  --surface2:#0f1418;
-
-  --ink: rgba(243,245,246,0.88);
-  --muted: rgba(162,171,178,0.86);
-
-  --line: rgba(255,255,255,.10);
-
-  /* SINGLE ACCENT */
-  --accent:#6fd6ff;
-  --glow: rgba(111,214,255,.18);
-  --glow-soft: rgba(111,214,255,.10);
-
-  --container:1200px;
-}
-
-/* ================= BASE ================= */
-
-*{box-sizing:border-box}
-html,body{height:100%}
-
-body{
-  margin:0;
-  background:
-    radial-gradient(1100px 700px at 70% 10%, rgba(111,214,255,.12), transparent 58%),
-    radial-gradient(900px 600px at 15% 0%, rgba(111,214,255,.06), transparent 60%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
-  color:var(--ink);
-  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-
-a{color:inherit;text-decoration:none}
-.container{width:min(var(--container),92%);margin-inline:auto}
-
-/* ================= TOPBAR ================= */
-
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:rgba(11,14,16,.72);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  backdrop-filter:blur(10px);
-}
-
-.topbar-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 0;
-}
-
-.wordmark{
-  font-family:"IBM Plex Serif",serif;
-  letter-spacing:.28em;
-  font-size:15px;
-  color:rgba(243,245,246,.92);
-}
-
-.nav{
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-
-.nav a{
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-  padding:8px 10px;
-  border-radius:10px;
-}
-
-.nav a:hover{
-  color:var(--ink);
-  background:rgba(255,255,255,.03);
-}
-
-.cta{
-  border:1px solid rgba(255,255,255,.14);
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  padding:10px 14px;
-  border-radius:14px;
-  font-weight:600;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.cta:hover{
-  border-color:var(--glow);
-  box-shadow:0 0 0 4px rgba(111,214,255,.06);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  position:relative;
-  padding:120px 0 110px;
-  overflow:hidden;
-}
-
-/* Subtle scanlines */
-
-.hero::before{
-  content:"";
-  position:absolute;inset:-2px;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,.018) 0px,
-      rgba(255,255,255,.018) 1px,
-      transparent 2px,
-      transparent 7px
-    );
-  opacity:.22;
-  pointer-events:none;
-  mix-blend-mode:overlay;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;inset:0;
-  background:
-    radial-gradient(900px 520px at 30% 25%, rgba(111,214,255,.09), transparent 58%);
-  pointer-events:none;
-}
-
-/* Layout */
-
-.hero-inner{
-  position:relative;
-  display:grid;
-  grid-template-columns:1fr 520px;
-  gap:70px;
-  align-items:start;
-}
-
-/* Divider tension */
-
-.hero-inner::before{
-  content:"";
-  position:absolute;
-  left:58%;
-  top:0;bottom:0;
-  width:1px;
-  background:linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255,255,255,.10),
-    transparent
-  );
-}
-
-/* Text side */
-
-.kicker{
-  margin:0 0 16px;
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(243,245,246,.72);
-}
-
-.hero-title{
-  margin:0 0 16px;
-  font-family:"IBM Plex Serif",serif;
-  font-size:clamp(56px, 6vw, 88px);
-  line-height:1.02;
-  letter-spacing:-.035em;
-  text-shadow:0 0 30px rgba(111,214,255,.06);
-  position:relative;
-}
-
-/* Accent signature rule */
-
-.hero-title::after{
-  content:"";
-  display:block;
-  width:72px;
-  height:2px;
-  margin-top:18px;
-  background: linear-gradient(90deg, var(--accent), rgba(111,214,255,0));
-  box-shadow: 0 0 24px var(--glow);
-}
-
-.hero-sub{
-  margin:0;
-  max-width:560px;
-  font-size:18px;
-  line-height:1.65;
-  color:var(--muted);
-}
-
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 16px;
-  border-radius:16px;
-  font-weight:700;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.03);
-}
-
-.btn:hover{
-  border-color:var(--glow);
-  box-shadow:0 0 0 4px rgba(111,214,255,.06);
-}
-
-.btn-primary{
-  border-color:rgba(111,214,255,.30);
-  background:
-    linear-gradient(180deg, rgba(111,214,255,.14), rgba(255,255,255,.02));
-}
-
-.btn-primary:hover{
-  border-color:rgba(111,214,255,.50);
-}
-
-.btn-ghost{
-  background:rgba(255,255,255,.02);
-}
-
-/* Specs */
-
-.specs{
-  margin-top:28px;
-  border-top:1px solid rgba(255,255,255,.08);
-  padding-top:18px;
-  display:grid;
-  gap:10px;
-  max-width:620px;
-}
-
-.spec-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-  justify-content:space-between;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.badge{
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.02);
-  padding:6px 10px;
-  border-radius:999px;
-  color:rgba(243,245,246,.86);
-  font-size:12px;
-  letter-spacing:.06em;
-}
-
-.manifesto{
-  margin-top:64px;
-  font-size:12px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:rgba(243,245,246,.62);
-}
-
-/* ================= PANEL ================= */
-
-.panel{
-  position:relative;
-  height:460px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.12);
-  background:
-    radial-gradient(520px 360px at 30% 20%, rgba(111,214,255,.10), transparent 60%),
-    linear-gradient(180deg, rgba(18,23,27,.95), rgba(15,20,24,.95));
-  box-shadow:
-    0 24px 80px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(255,255,255,.04);
-  overflow:hidden;
-}
-
-.panel::before{
-  content:"";
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-  background-size:48px 48px;
-  opacity:.08;
-}
-
-.panel-head{
-  display:flex;
-  justify-content:space-between;
-  padding:22px 22px 0;
-}
-
-.panel-title{
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(243,245,246,.72);
-}
-
-.panel-status{
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--accent);
-  border:1px solid rgba(111,214,255,.30);
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(111,214,255,.08);
-}
-
-.panel-grid{
-  padding:18px 22px 22px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.module{
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:14px;
-  background:rgba(255,255,255,.02);
-  padding:14px;
-}
-
-.module-k{
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-
-.module-v{
-  margin-top:10px;
-  font-family:"IBM Plex Serif",serif;
-  font-size:26px;
-}
-
-.module-note{
-  margin-top:8px;
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.45;
-}
-
-.spark{
-  margin-top:12px;
-  height:34px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.08);
-  background:
-    linear-gradient(90deg, rgba(111,214,255,.0), rgba(111,214,255,.14), rgba(111,214,255,.0));
-}
-
-.panel-foot{
-  position:absolute;
-  left:22px; right:22px; bottom:18px;
-  display:flex;justify-content:space-between;
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(243,245,246,.62);
-}
-
-/* ================= SECTION ================= */
-
-.section{
-  padding:130px 0;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-
-.section-title{
-  margin:0 0 18px;
-  font-family:"IBM Plex Serif",serif;
-  font-size:36px;
-}
-
-.section-text{
-  max-width:760px;
-  color:var(--muted);
-  font-size:18px;
-  line-height:1.65;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:70px 0;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 980px){
-  .hero-inner{grid-template-columns:1fr;gap:50px}
-  .hero-inner::before{display:none}
-  .nav{display:none}
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Harla Consulting — Operational Decision Architecture</title>
+  <meta name="description" content="Harla Consulting builds operational decision architecture for industrial and humanitarian systems across Ethiopia, the Horn of Africa, and the UAE.">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Harla Consulting — Operational Decision Architecture" />
+  <meta property="og:description" content="Analytical intelligence and decision-support systems designed for real operational constraints." />
+  <meta property="og:url" content="https://ardanlabo.github.io/harla-consulting-site/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="wordmark">HARLA CONSULTING</div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="contact.html">Contact</a>
+      <a class="cta" href="contact.html">Request a conversation</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <p class="kicker">
+        Operational Consultancy • Decision Support • Industrial Analytics
+      </p>
+
+      <h1 class="hero-title">
+        Operational Decision Architecture
+      </h1>
+
+      <p class="hero-sub">
+        We design analytical systems that transform fragmented reporting into structured operational intelligence —
+        built to remain stable under real-world constraints.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="services.html">Explore services</a>
+        <a class="btn btn-ghost" href="about.html">How we work</a>
+      </div>
+
+      <div class="specs" aria-label="Capability specs">
+        <div class="spec-row">
+          <span>Operating principle</span>
+          <span class="badge">Clarity under constraint</span>
+          <span class="badge">Defensible outputs</span>
+          <span class="badge">Decision cadence</span>
+        </div>
+
+        <div class="spec-row">
+          <span>Geographic presence</span>
+          <span class="badge">Ethiopia</span>
+          <span class="badge">UAE</span>
+          <span class="badge">Horn of Africa</span>
+        </div>
+      </div>
+
+      <div class="manifesto">
+        Systems that hold when operations degrade.
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <aside class="panel" aria-label="Decision-support panel placeholder">
+
+      <div class="panel-head">
+        <div class="panel-title">Operational Instrument Panel</div>
+        <div class="panel-status">Live-ready</div>
+      </div>
+
+      <div class="panel-grid">
+
+        <div class="module">
+          <div class="module-k">Signal / Pressure</div>
+          <div class="module-v">LOW → EXTREME</div>
+          <div class="module-note">
+            Simple, interpretable pressure states for decision meetings.
+          </div>
+          <div class="spark"></div>
+        </div>
+
+        <div class="module">
+          <div class="module-k">Coverage</div>
+          <div class="module-v">Gap Scan</div>
+          <div class="module-note">
+            Detect uncovered areas, overlaps, and reporting inconsistencies.
+          </div>
+          <div class="spark"></div>
+        </div>
+
+        <div class="module">
+          <div class="module-k">Risk Index</div>
+          <div class="module-v">0 → 100</div>
+          <div class="module-note">
+            Decision-grade scoring designed for transparency and auditability.
+          </div>
+          <div class="spark"></div>
+        </div>
+
+        <div class="module">
+          <div class="module-k">Cadence</div>
+          <div class="module-v">Monthly</div>
+          <div class="module-note">
+            Built for stable reporting cycles and controlled updates.
+          </div>
+          <div class="spark"></div>
+        </div>
+
+      </div>
+
+      <div class="panel-foot">
+        <span>System mapping</span>
+        <span>Decision logic</span>
+        <span>Monitoring cadence</span>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">
+      Analytical Intelligence for Operational Systems
+    </h2>
+    <p class="section-text">
+      Harla Consulting delivers operational diagnostics, reporting automation, and decision-support tools for industrial and humanitarian organizations.
+      Our work prioritizes reliability, interpretability, and execution — not presentation gimmicks.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Harla Consulting — Addis Ababa & UAE —
+    <a href="mailto:contact@harlaconsulting.com">contact@harlaconsulting.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
