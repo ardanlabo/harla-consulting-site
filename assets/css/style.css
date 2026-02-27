@@ -213,3 +213,48 @@ footer {
   text-transform: uppercase;
   color: rgba(242,244,245,0.65);
 }
+
+/* ===============================
+   V3 STRUCTURAL TENSION
+================================= */
+
+.hero-inner {
+  position: relative;
+}
+
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60%;
+  width: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.visual-box {
+  background: #171c21;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hero::before {
+  font-size: 320px;
+  left: -80px;
+  top: 40px;
+  opacity: 0.05;
+}
+
+.hero-title {
+  max-width: 700px;
+}
+
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.manifesto {
+  margin-top: 80px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+}
