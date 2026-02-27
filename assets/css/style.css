@@ -161,3 +161,55 @@ footer {
   font-size: 13px;
   color: var(--muted);
 }
+
+/* ===============================
+   V2 MONUMENTAL TYPOGRAPHY
+================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "HARLA";
+  position: absolute;
+  top: 60px;
+  left: -40px;
+  font-family: "IBM Plex Serif", serif;
+  font-size: 260px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -80px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(140,122,88,0.12), transparent 60%);
+  pointer-events: none;
+}
+
+/* Stronger hero headline */
+
+.hero-title {
+  font-size: clamp(52px, 6vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+/* Add manifesto line */
+
+.manifesto {
+  margin-top: 60px;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242,244,245,0.65);
+}
